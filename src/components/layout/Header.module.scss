@@ -20,13 +20,44 @@
   align-items: center;
 }
 
+/* --- LOGO WIDOCZNE TYLKO NA MOBILE --- */
+.mobileLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @media (min-width: 768px) {
+    display: none; /* Ukrywamy na desktopie, bo tam logo jest w Sidebarze! */
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  .brandName {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--foreground);
+  }
+}
+
 .searchContainer {
   .breadcrumbs {
     font-size: 1.4rem;
     opacity: 0.6;
     display: none; /* Ukrywamy okruszki na najmniejszych ekranach */
 
-    @media (min-width: 480px) {
+    @media (min-width: 768px) {
       display: block;
     }
 

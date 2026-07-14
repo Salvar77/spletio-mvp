@@ -26,6 +26,11 @@ export default function Header({ isSidebarOpen, onMenuClick }: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles.leftSection}>
+        <div className={styles.mobileLogo}>
+          <div className={styles.icon}>S</div>
+          <span className={styles.brandName}>Spletio</span>
+        </div>
+
         <div className={styles.searchContainer}>
           <p className={styles.breadcrumbs}>Dashboard / <span className={styles.current}>Overview</span></p>
         </div>
