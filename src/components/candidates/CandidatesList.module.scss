@@ -1,0 +1,104 @@
+.container {
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  th {
+    padding: 16px 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--foreground);
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  td {
+    padding: 16px 24px;
+    font-size: 1.4rem;
+    color: var(--foreground);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background-color: var(--hover-bg);
+  }
+
+  .name {
+    font-weight: 600;
+  }
+
+  .role {
+    opacity: 0.8;
+  }
+
+  .score {
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    &.high {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+    }
+    &.medium {
+      background-color: rgba(245, 158, 11, 0.1);
+      color: #f59e0b;
+    }
+  }
+
+  .statusBadge {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background);
+
+    /* Dynamic classes based on status string (lowercase) */
+    &.nowy {
+      border-color: #3b82f6;
+      color: #3b82f6;
+    }
+    &.rozmowa {
+      border-color: #10b981;
+      color: #10b981;
+    }
+    &.odrzucony {
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+  }
+
+  .actions {
+    .actionButton {
+      background: transparent;
+      border: none;
+      color: var(--foreground);
+      opacity: 0.6;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        opacity: 1;
+        background-color: var(--background);
+      }
+    }
+  }
+}
