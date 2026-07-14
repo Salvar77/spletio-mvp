@@ -23,19 +23,19 @@ export default function CandidatesList() {
         <tbody>
           {mockCandidates.map((c) => (
             <tr key={c.id}>
-              <td className={styles.name}>{c.name}</td>
-              <td className={styles.role}>{c.role}</td>
-              <td>
+              <td data-label="Kandydat" className={styles.name}>{c.name}</td>
+              <td data-label="Stanowisko" className={styles.role}>{c.role}</td>
+              <td data-label="Ocena AI">
                 <span className={`${styles.score} ${c.aiScore >= 90 ? styles.high : c.aiScore >= 80 ? styles.medium : styles.low}`}>
                   {c.aiScore}%
                 </span>
               </td>
-              <td>
+              <td data-label="Status">
                 <span className={`${styles.statusBadge} ${styles[c.status.toLowerCase()] || ""}`}>
                   {c.status}
                 </span>
               </td>
-              <td className={styles.actions}>
+              <td data-label="Akcje" className={styles.actions}>
                 <button className={styles.actionButton}><MoreHorizontal size={16} /></button>
               </td>
             </tr>

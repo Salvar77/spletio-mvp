@@ -10,26 +10,86 @@
   border-collapse: collapse;
   text-align: left;
 
-  th {
-    padding: 16px 24px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--foreground);
-    opacity: 0.6;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  /* --- MOBILE FIRST: KARTY KANDYDATÓW --- */
+  display: block;
+
+  thead {
+    display: none; /* Ukrywamy nagłówki kolumn na telefonach */
+  }
+
+  tbody, tr, td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    padding: 16px;
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  tr:last-child {
+    border-bottom: none;
   }
 
   td {
-    padding: 16px 24px;
-    font-size: 1.4rem;
-    color: var(--foreground);
-    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Wyświetlanie etykiety wyciągniętej z data-label w React */
+    &::before {
+      content: attr(data-label);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--foreground);
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
   }
 
-  tr:last-child td {
-    border-bottom: none;
+  /* --- DESKTOP: KLASYCZNA TABELA --- */
+  @media (min-width: 768px) {
+    display: table;
+
+    thead {
+      display: table-header-group;
+    }
+
+    tbody {
+      display: table-row-group;
+    }
+
+    tr {
+      display: table-row;
+      padding: 0;
+    }
+
+    td {
+      display: table-cell;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-color);
+
+      &::before {
+        display: none; /* Ukrywamy sztuczne etykiety na desktopie */
+      }
+    }
+
+    th {
+      padding: 16px 24px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--foreground);
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border-color);
+    }
   }
 
   tr:hover td {
@@ -38,6 +98,17 @@
 
   .name {
     font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--primary); /* Na mobile wyróżniamy imię kandydata */
+    
+    &::before {
+      display: none; /* Nie chcemy pisać "Kandydat: Jan", niech Imię będzie tytułem karty */
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.4rem;
+      color: var(--foreground);
+    }
   }
 
   .role {
