@@ -26,7 +26,7 @@ export default function CandidatesList() {
               <td className={styles.name}>{c.name}</td>
               <td className={styles.role}>{c.role}</td>
               <td>
-                <span className={`${styles.score} ${c.aiScore >= 90 ? styles.high : styles.medium}`}>
+                <span className={`${styles.score} ${c.aiScore >= 90 ? styles.high : c.aiScore >= 80 ? styles.medium : styles.low}`}>
                   {c.aiScore}%
                 </span>
               </td>

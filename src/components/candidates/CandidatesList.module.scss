@@ -45,40 +45,46 @@
   }
 
   .score {
-    font-weight: 700;
-    padding: 4px 8px;
-    border-radius: 4px;
+    font-weight: 800; /* Grubszy font dla czytelności */
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    border: 1px solid transparent; /* Podstawa dla borderu */
 
     &.high {
-      background-color: rgba(16, 185, 129, 0.1);
-      color: #10b981;
+      background-color: var(--success-bg);
+      color: var(--success-text);
+      border-color: rgba(16, 185, 129, 0.3); /* Delikatna ramka dodaje wyrazistości */
     }
     &.medium {
-      background-color: rgba(245, 158, 11, 0.1);
-      color: #f59e0b;
+      background-color: var(--warning-bg);
+      color: var(--warning-text);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+    &.low {
+      background-color: var(--danger-bg);
+      color: var(--danger-text);
+      border-color: rgba(239, 68, 68, 0.3);
     }
   }
 
   .statusBadge {
     font-size: 1.2rem;
-    font-weight: 600;
-    padding: 4px 12px;
+    font-weight: 700;
+    padding: 6px 16px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
-    background-color: var(--background);
+    color: #ffffff; /* Zawsze biały tekst na solidnym tle */
+    border: none; /* Usuwamy mdłą ramkę na rzecz pełnego tła */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
-    /* Dynamic classes based on status string (lowercase) */
     &.nowy {
-      border-color: #3b82f6;
-      color: #3b82f6;
+      background-color: var(--info-solid);
     }
     &.rozmowa {
-      border-color: #10b981;
-      color: #10b981;
+      background-color: var(--success-solid);
     }
     &.odrzucony {
-      border-color: #ef4444;
-      color: #ef4444;
+      background-color: var(--danger-solid);
     }
   }
 
