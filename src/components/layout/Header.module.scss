@@ -1,0 +1,66 @@
+.header {
+  height: 70px;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px; /* Mobile First: Mniejszy padding */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  @media (min-width: 768px) {
+    padding: 0 32px;
+  }
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+
+.searchContainer {
+  .breadcrumbs {
+    font-size: 1.4rem;
+    opacity: 0.6;
+    display: none; /* Ukrywamy okruszki na najmniejszych ekranach */
+
+    @media (min-width: 480px) {
+      display: block;
+    }
+
+    .current {
+      font-weight: 600;
+      opacity: 1;
+      color: var(--primary);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Mniejszy gap na mobile */
+
+  @media (min-width: 768px) {
+    gap: 16px;
+  }
+}
+
+.iconButton {
+  background: transparent;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--hover-bg);
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../styles/colors";
+
+:root {
+  --background: #{$white-smooth-4};
+  --foreground: #{$dark-gray};
+  --sidebar-bg: #{$white-smooth};
+  --border-color: #{$grey-smooth-4};
+  --primary: #{$elegant-dark-blue};
+  --primary-hover: #{$blue-after-nav};
+  --hover-bg: #{$white-smooth-2};
+}
+
+.dark {
+  --background: #{$new-black};
+  --foreground: #{$white-smooth};
+  --sidebar-bg: #{$black-200};
+  --border-color: #{$grey-smooth-3};
+  --primary: #{$main-color};
+  --primary-hover: #{$gold-main};
+  --hover-bg: #{$tertiary-color};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 1.6rem;
+  font-family: var(--font-inter), sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* transition helps avoid jarring flashes when manually toggling theme */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

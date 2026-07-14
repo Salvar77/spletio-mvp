@@ -1,0 +1,156 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 50;
+
+  /* Mobile First: Domyślnie schowany poza ekranem */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  @media (min-width: 768px) {
+    transform: translateX(0); /* Zawsze widoczny na desktopie */
+  }
+}
+
+.logo {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.nav {
+  padding: 24px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section {
+  .sectionTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+    padding-left: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--foreground);
+  font-weight: 500;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--hover-bg);
+  }
+
+  &.active {
+    background-color: var(--hover-bg);
+    color: var(--primary);
+    
+    .linkIcon {
+      color: var(--primary);
+    }
+  }
+
+  .linkIcon {
+    opacity: 0.7;
+  }
+}
+
+.userProfile {
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-hover);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+
+    .role {
+      font-size: 1.2rem;
+      opacity: 0.6;
+    }
+  }
+}
