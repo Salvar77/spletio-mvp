@@ -1,3 +1,5 @@
+"use client";
+
 import { MoreHorizontal } from "lucide-react";
 import { useRouter } from "next/navigation";
 import styles from "./CandidatesList.module.scss";

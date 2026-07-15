@@ -1,0 +1,115 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+    border-color: rgba(16, 185, 129, 0.3);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+
+  .badge {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 16px;
+    text-transform: uppercase;
+
+    &.active {
+      background-color: var(--success-bg);
+      color: var(--success-text);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    &.draft {
+      background-color: var(--hover-bg);
+      color: var(--foreground);
+      opacity: 0.7;
+      border: 1px dashed var(--border-color);
+    }
+  }
+
+  .actionBtn {
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.content {
+  flex-grow: 1;
+  margin-bottom: 24px;
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: var(--foreground);
+  }
+
+  .department {
+    font-size: 1.4rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0 0 16px 0;
+  }
+
+  .details {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    .detailItem {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1.3rem;
+      color: var(--foreground);
+      opacity: 0.7;
+    }
+  }
+}
+
+.footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .candidates {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--foreground);
+    opacity: 0.8;
+  }
+}
