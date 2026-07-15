@@ -1,0 +1,371 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+
+  .leftNav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .backButton {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.4rem;
+      color: var(--foreground);
+      opacity: 0.7;
+      text-decoration: none;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .candidateIntro {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background-color: var(--hover-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--foreground);
+      }
+
+      .name {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin: 0 0 4px 0;
+        color: var(--foreground);
+      }
+
+      .role {
+        font-size: 1.4rem;
+        color: var(--foreground);
+        opacity: 0.7;
+        margin: 0;
+      }
+    }
+  }
+
+  .headerActions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+
+    .statusBadge {
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      color: #ffffff;
+      background-color: var(--success-solid);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .actionsBox {
+      display: flex;
+      gap: 12px;
+
+      button {
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.4rem;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+      }
+
+      .primaryBtn {
+        background-color: var(--primary);
+        color: #ffffff;
+        &:hover {
+          background-color: var(--primary-hover);
+        }
+      }
+
+      .dangerBtn {
+        background-color: transparent;
+        border: 1px solid var(--danger-solid);
+        color: var(--danger-solid);
+        &:hover {
+          background-color: var(--danger-bg);
+        }
+      }
+    }
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--foreground);
+  }
+
+  .iconAi {
+    color: var(--primary);
+  }
+
+  .iconDoc {
+    color: var(--foreground);
+    opacity: 0.6;
+  }
+}
+
+.aiPanel, .cvPreviewPanel {
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.scoreCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: var(--hover-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  border-left: 4px solid var(--success-solid);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .scoreCircle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: 2px solid rgba(16, 185, 129, 0.3);
+    flex-shrink: 0;
+
+    .scoreValue {
+      font-size: 2.8rem;
+      font-weight: 800;
+    }
+    
+    .scoreLabel {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  .reasoning {
+    h3 {
+      font-size: 1.6rem;
+      margin: 0 0 8px 0;
+      color: var(--foreground);
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: var(--foreground);
+      opacity: 0.8;
+      margin: 0;
+    }
+  }
+}
+
+.skillsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+
+  .skillGroup {
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px 0;
+      color: var(--foreground);
+      opacity: 0.9;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      span {
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .tagHard {
+        background-color: var(--hover-bg);
+        border: 1px solid var(--border-color);
+        color: var(--primary);
+      }
+
+      .tagSoft {
+        background-color: transparent;
+        border: 1px dashed var(--border-color);
+        color: var(--foreground);
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.experienceSection {
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 24px 0;
+    color: var(--foreground);
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7px;
+      width: 2px;
+      background-color: var(--border-color);
+    }
+  }
+
+  .timelineItem {
+    position: relative;
+    padding-left: 32px;
+
+    .timelineDot {
+      position: absolute;
+      top: 4px;
+      left: 2px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      border: 2px solid var(--sidebar-bg);
+    }
+
+    h4 {
+      font-size: 1.6rem;
+      margin: 0 0 4px 0;
+      color: var(--foreground);
+    }
+
+    .company {
+      font-size: 1.3rem;
+      color: var(--foreground);
+      opacity: 0.6;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: var(--foreground);
+      opacity: 0.8;
+      margin: 0;
+    }
+  }
+}
+
+.cvPreviewPanel {
+  display: flex;
+  flex-direction: column;
+
+  .pdfContainer {
+    flex-grow: 1;
+    background-color: var(--background); /* ciemniejsze zagnieżdżenie */
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    padding: 32px;
+    text-align: center;
+
+    .pdfPlaceholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      max-width: 300px;
+      
+      .placeholderIcon {
+        color: var(--border-color);
+      }
+
+      p {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--foreground);
+        margin: 0;
+      }
+
+      span {
+        font-size: 1.3rem;
+        color: var(--foreground);
+        opacity: 0.5;
+      }
+    }
+  }
+}

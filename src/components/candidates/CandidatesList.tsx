@@ -1,4 +1,5 @@
 import { MoreHorizontal } from "lucide-react";
+import { useRouter } from "next/navigation";
 import styles from "./CandidatesList.module.scss";
 
 const mockCandidates = [
@@ -8,6 +9,12 @@ const mockCandidates = [
 ];
 
 export default function CandidatesList() {
+  const router = useRouter();
+
+  const handleRowClick = (id: number) => {
+    router.push(`/candidates/${id}`);
+  };
+
   return (
     <div className={styles.container}>
       <table className={styles.table}>
@@ -22,7 +29,7 @@ export default function CandidatesList() {
         </thead>
         <tbody>
           {mockCandidates.map((c) => (
-            <tr key={c.id}>
+            <tr key={c.id} onClick={() => handleRowClick(c.id)} style={{ cursor: "pointer" }}>
               <td data-label="Kandydat" className={styles.name}>{c.name}</td>
               <td data-label="Stanowisko" className={styles.role}>{c.role}</td>
               <td data-label="Ocena AI">
