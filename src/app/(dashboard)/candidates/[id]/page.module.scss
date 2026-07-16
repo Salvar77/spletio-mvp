@@ -15,6 +15,12 @@
   border-radius: 12px;
   padding: 24px;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
   .leftNav {
     display: flex;
     flex-direction: column;
@@ -73,6 +79,12 @@
     align-items: flex-end;
     gap: 16px;
 
+    @media (max-width: 768px) {
+      align-items: stretch;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+    }
+
     .statusBadge {
       font-size: 1.2rem;
       font-weight: 700;
@@ -81,11 +93,20 @@
       color: #ffffff;
       background-color: var(--success-solid);
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      
+      @media (max-width: 768px) {
+        align-self: flex-start;
+        margin-bottom: 8px;
+      }
     }
 
     .actionsBox {
       display: flex;
       gap: 12px;
+      
+      @media (max-width: 768px) {
+        width: 100%;
+      }
 
       button {
         padding: 8px 16px;
@@ -95,6 +116,11 @@
         cursor: pointer;
         border: none;
         transition: all 0.2s;
+        
+        @media (max-width: 768px) {
+          flex: 1;
+          padding: 12px;
+        }
       }
 
       .primaryBtn {
@@ -160,7 +186,7 @@
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
-    border-color: rgba(16, 185, 129, 0.3);
+    border-color: rgba(var(--primary-rgb), 0.3);
   }
 }
 

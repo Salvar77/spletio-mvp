@@ -1,4 +1,4 @@
-@import "../../styles/colors";
+@use "../../styles/colors" as *;
 
 :root {
   --background: #{$white-smooth-4};
@@ -7,6 +7,7 @@
   --border-color: #{$grey-smooth-4};
   --primary: #{$elegant-dark-blue};
   --primary-hover: #{$blue-after-nav};
+  --primary-rgb: 10, 30, 61;
   --hover-bg: #{$white-smooth-2};
 
   /* Zmienne statusowe - wyraziste kolory */
@@ -32,8 +33,9 @@
   --sidebar-bg: #18181b; /* Zinc 900 - Tło kart i paska bocznego */
   --border-color: #27272a; /* Zinc 800 - Delikatne odcięcie */
   --foreground: #fafafa; /* Zinc 50 - Czysty biały tekst */
-  --primary: #6366f1; /* Indigo 500 - Nowoczesny fioletowo-niebieski akcent */
-  --primary-hover: #4f46e5; /* Indigo 600 - Tło dla ikon na kartach */
+  --primary: #f59e0b; /* Amber 500 */
+  --primary-hover: #d97706; /* Amber 600 */
+  --primary-rgb: 245, 158, 11;
   --hover-bg: #27272a; /* Zinc 800 - Subtelny hover w menu */
 
   /* Zmienne statusowe dla Dark Mode - jaśniejszy tekst dla czytelności */
@@ -68,9 +70,9 @@ html {
    ========================================= */
 
 @keyframes aiPulse {
-  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0); }
+  100% { box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0); }
 }
 
 @keyframes textHighlight {
@@ -79,7 +81,7 @@ html {
 }
 
 .ai-highlight {
-  background: linear-gradient(120deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
+  background: linear-gradient(120deg, rgba(var(--primary-rgb), 0.15) 0%, rgba(var(--primary-rgb), 0.15) 100%);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-radius: 4px;

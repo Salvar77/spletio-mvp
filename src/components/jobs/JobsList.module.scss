@@ -17,7 +17,7 @@
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
-    border-color: rgba(16, 185, 129, 0.3);
+    border-color: rgba(var(--primary-rgb), 0.3);
   }
 }
 
@@ -37,7 +37,7 @@
     &.active {
       background-color: var(--success-bg);
       color: var(--success-text);
-      border: 1px solid rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(var(--primary-rgb), 0.2);
     }
 
     &.draft {

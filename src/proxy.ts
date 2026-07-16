@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   // Tutaj w przyszłości zintegrujemy tokeny sesyjne, by zablokować dostęp.
   // Na razie po prostu pozwalamy na wejście, ale struktura ochronna jest gotowa.
   

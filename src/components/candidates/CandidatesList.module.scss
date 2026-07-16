@@ -125,7 +125,7 @@
     &.high {
       background-color: var(--success-bg);
       color: var(--success-text);
-      border-color: rgba(16, 185, 129, 0.3); /* Delikatna ramka dodaje wyrazistości */
+      border-color: rgba(var(--primary-rgb), 0.3); /* Delikatna ramka dodaje wyrazistości */
     }
     &.medium {
       background-color: var(--warning-bg);

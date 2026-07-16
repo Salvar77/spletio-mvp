@@ -44,8 +44,8 @@ export default function CandidateProfilePage({ params }: { params: { id: string 
         <div className={styles.headerActions}>
           <span className={styles.statusBadge}>{mockCandidate.status}</span>
           <div className={styles.actionsBox}>
-             <button className={styles.primaryBtn}>Przejdź dalej</button>
              <button className={styles.dangerBtn}>Odrzuć</button>
+             <button className={styles.primaryBtn}>Przejdź dalej</button>
           </div>
         </div>
       </header>
