@@ -171,11 +171,11 @@
     border-bottom: 1px solid var(--border-color);
   }
 
-  &::not(:empty)::before {
+  &:not(:empty)::before {
     margin-right: .25em;
   }
 
-  &::not(:empty)::after {
+  &:not(:empty)::after {
     margin-left: .25em;
   }
 }
